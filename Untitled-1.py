@@ -4,6 +4,8 @@ numb1 = float(input("Enter the first number: "))
 operation = input("Enter the operation (+, -, *(multiplication),/(division)): ")
 numb2 = float(input("Enter the second number: "))
 
+result = None
+
 
 if operation == "+":
     result = numb1 + numb2
@@ -17,11 +19,12 @@ elif operation == "*":
 elif operation == "/":
     if numb2 != 0:
         result = numb1 / numb2
-    elif numb2 == 0:
-        print("Error")
+    else:
+        print("Error: Division by zero")
 
 else:
     print("Invalid operation")
 
 
-print("Result: ", result)
+if result is not None:
+    print("Result: ", result)
